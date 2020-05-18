@@ -1,10 +1,20 @@
 {
-  "name": "react-custom-hooks",
-  "version": "1.0.0",
-  "description": "Useful list of custom React hooks",
-  "author": "sumgwork",
+  "name": "@sgovil/react-custom-hooks",
+  "version": "0.0.1",
+  "description": "Useful collection of custom React hooks",
+  "author": {
+    "name": "Sumit Govil",
+    "email": "sumg.work@gmail.com"
+  },
   "license": "MIT",
-  "repository": "sumgwork/react-custom-hooks",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumgwork/react-custom-hooks.git"
+  },
+  "homepage": "https://github.com/sumgwork/react-custom-hooks#readme",
+  "bugs": {
+    "url": "https://github.com/sumgwork/react-custom-hooks/issues"
+  },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
