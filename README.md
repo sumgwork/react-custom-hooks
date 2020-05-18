@@ -2,26 +2,40 @@
 
 > Useful list of custom React hooks
 
-[![NPM](https://img.shields.io/npm/v/react-custom-hooks.svg)](https://www.npmjs.com/package/react-custom-hooks) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@sgovil/react-custom-hooks)](https://www.npmjs.com/package/@sgovil/react-custom-hooks)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![demo site](https://img.shields.io/badge/demo-site-green)](https://sumgwork.github.io/react-custom-hooks/)
 
 ## Install
 
 ```bash
-npm install --save react-custom-hooks
+npm install --save @sgovil/react-custom-hooks
 ```
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from "react";
+import useFetch from "@sgovil/react-custom-hooks";
 
-import { useMyHook } from 'react-custom-hooks'
-
-const Example = () => {
-  const example = useMyHook()
+export default function App() {
+  const [response, error, loading] = useFetch(
+    "https://jsonplaceholder.typicode.com/todos"
+  );
   return (
-    <div>{example}</div>
-  )
+    <div>
+      <h1>React Custom Hooks</h1>
+
+      {loading && <div>Loading...</div>}
+      {!loading && error && <div>{error.message}</div>}
+      {!loading && !error && response && (
+        <div>
+          <h2>Fetch Complete</h2>
+          <pre>{JSON.stringify(response, undefined, 2)}</pre>
+        </div>
+      )}
+    </div>
+  );
 }
 ```
 
